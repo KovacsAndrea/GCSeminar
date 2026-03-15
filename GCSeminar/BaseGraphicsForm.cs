@@ -59,6 +59,27 @@ namespace GCSeminar
                 puncte.Add(new Point(x, y));
             }
         }
+        protected void GenerateRandomClusteredPoints(int? updatedNrPoints = null)
+        {
+            int currentNrPoints;
+            if (updatedNrPoints.HasValue && updatedNrPoints > 0)
+            {
+                currentNrPoints = updatedNrPoints.Value;
+            }
+            else
+            {
+                currentNrPoints = 10;
+            }
+
+            int range = 100;
+            puncte = new List<Point>();
+            for (int i = 0; i < currentNrPoints; i++)
+            {
+                int x = random.Next(displayTarget.Width / 2 - range, displayTarget.Width / 2 + range);
+                int y = random.Next(displayTarget.Height / 2 - range, displayTarget.Height / 2 + range);
+                puncte.Add(new Point(x, y));
+            }
+        }
 
         protected void DrawPoint(Point p, Brush brush, int size = 12)
         {

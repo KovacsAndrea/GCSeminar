@@ -58,12 +58,12 @@ namespace GCSeminar.Seminar1
                 DrawPoint(p, Brushes.Orange);
             }
 
-            foreach (var pOrange in puncte)
+            foreach (var dynamicPoint in puncte)
             {
                 Point closest = staticPoints
-                    .OrderBy(p => DistanceSquared(pOrange, p))
+                    .OrderBy(p => DistanceSquared(dynamicPoint, p))
                     .First();
-                g.DrawLine(Pens.Black, pOrange, closest);
+                g.DrawLine(Pens.Black, dynamicPoint, closest);
             }
 
             RefreshCanvas();

@@ -16,19 +16,21 @@ namespace GCSeminar.Seminar2
         {
             InitializeComponent();
             this.Text = "Seminar 2 - Aplicatia 3";
+            this.NrPointsTextBox.Text = "4";
         }
 
         private void S2Aplicatia3_Load(object sender, EventArgs e)
         {
+            
             SetupCanvas(this.pictureBox1);
-            GenerateRandomPoints(ReadNrPoints());
+            GenerateRandomClusteredPoints(ReadNrPoints());
             FindMinimumEnclosingCircle();
             DrawDemo();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            GenerateRandomPoints(ReadNrPoints());
+            GenerateRandomClusteredPoints(ReadNrPoints());
             FindMinimumEnclosingCircle();
             DrawDemo();
         }
